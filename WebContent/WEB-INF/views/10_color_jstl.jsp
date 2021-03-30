@@ -1,6 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
+<!-- JSTL을 사용하기 위해서 taglib 지시자가 필요하다 -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
@@ -15,7 +15,7 @@
 
 </head>
 <body>
-	
+	<h3>JSP Way</h3>
 	<%
 	if( "1".equals( request.getParameter("color") ) ) {	
 	%>
@@ -31,8 +31,17 @@
 	<%
 	}
 	%>
-
-
+	
+	<h3>JSTL Way</h3>
+	<c:if test="${ param.color == 1 }">
+		<span style="color:red">빨강</span>
+	</c:if>
+	<c:if test="${ param.color == 2 }">
+		<span style="color:greem">초록</span>
+	</c:if>
+	<c:if test="${ param.color == 3 }">
+		<span style="color:blue">파랑</span>
+	</c:if>
 
 	
 
